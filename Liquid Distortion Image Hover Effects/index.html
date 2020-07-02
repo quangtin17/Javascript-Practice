@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liquid Distortion Image Hover Effects</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="imgBox">
+        <img
+          src="https://images.pexels.com/photos/3882348/pexels-photo-3882348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
+          alt=""
+        />
+        <img
+          src="https://images.pexels.com/photos/2942173/pexels-photo-2942173.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
+          alt=""
+        />
+      </div>
+      <div class="imgBox">
+        <img
+          src="https://images.pexels.com/photos/3214950/pexels-photo-3214950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
+          alt=""
+        />
+        <img
+          src="https://images.pexels.com/photos/3656518/pexels-photo-3656518.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
+          alt=""
+        />
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js"
+      integrity="sha512-ZoEQdcOJ16M20VnLaQxmZlthvLdTbF9CSAAyvZyzru+Em8NEY+7Xy0jdWdUjdOlo7hbPVmaobVBpUF9aqmXENA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
+      integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="hover-effect.umd.js"></script>
+    <script type="text/javascript">
+      Array.from(document.querySelectorAll('.imgBox')).forEach((e) => {
+          const imgs = Array.from(e.querySelectorAll('img'));
+          new hoverEffect({
+            parent: e,
+            intensity: 0.3,
+            image1: imgs[0].getAttribute('src'),
+            image2: imgs[1].getAttribute('src'),
+            displacementImage: '1.jpg'
+        });
+      });
+    </script>
+  </body>
+</html>
